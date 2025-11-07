@@ -7,6 +7,8 @@ document.addEventListener("DOMContentLoaded", function() {
         event.preventDefault();
     });
 
+    textBox.focus(); //I added this here to focus textbox upon loading the page so the user does not have to click it
+
     addButton.addEventListener("click", function() {
         addBtnClick();
     });
@@ -21,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function() {
 function addBtnClick() {
     let textBox = document.getElementById("newTask");
     let userValue = textBox.value.trim();
+    textBox.focus();
 
     if (userValue !== "") {
         addTask(userValue);
@@ -41,8 +44,11 @@ function addTask(newTask) {
 }
 
 function removeTask(event) {
+    let textBox = document.getElementById("newTask");
     let taskToRemove = event.target.parentNode;
     let list = taskToRemove.parentNode;
 
     list.removeChild(taskToRemove);
+
+    textBox.focus(); //focus textbox after removing item to prevent having to click into it again
 }

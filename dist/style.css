@@ -6,11 +6,9 @@ form {
   width: 500px;
 }
 
-ol, li {
-  width: 200px;
-}
-
 .done-btn {
+  position: fixed;
+  left: 250px;
   color: darkgray;
   background: none;
   border: none;
